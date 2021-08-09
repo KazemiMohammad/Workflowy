@@ -1,11 +1,15 @@
-import './App.css';
-import TaskList from './components/TaskList';
+import "./App.css";
+import TaskList from "./components/TaskList";
+import { Provider } from "react-redux";
+import store from "./reducer/store";
 
 function App() {
   return (
-    <div className="App">
-      <TaskList/>
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        <TaskList />
+      </div>
+    </Provider>
   );
 }
 
