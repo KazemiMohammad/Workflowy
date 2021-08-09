@@ -1,4 +1,3 @@
-import React from "react";
 import actionTypes from "./actionTypes";
 import ActionTypes from "./actionTypes";
 
@@ -8,37 +7,30 @@ export default function tasksReducer(state = loadData(), action) {
   switch (action.type) {
     case ActionTypes.LOAD_DATA:
       return loadData();
-      break;
     case actionTypes.ADD_NODE:
       return addNode(state, action.payload.parentId);
-      break;
     case actionTypes.DELETE_NODE:
       return deleteNode(state, action.payload.nodeId, action.payload.parentId);
-      break;
     case actionTypes.MOVE_NODE_BACK:
       return moveNodeBack(
         state,
         action.payload.nodeId,
         action.payload.parentId
       );
-      break;
     case actionTypes.MOVE_NODE_FORWARD:
       return moveNodeForward(
         state,
         action.payload.nodeId,
         action.payload.parentId
       );
-      break;
     case actionTypes.UPDATE_NODE_TITLE:
       return updateNodeTitle(
         state,
         action.payload.nodeId,
         action.payload.title
       );
-      break;
     default:
       return state;
-      break;
   }
 }
 
