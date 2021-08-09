@@ -1,0 +1,57 @@
+.task-item {
+  line-height: 28px;
+
+  .task {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    height: 31px;
+    padding-right: 10px;
+    .btn-add-inline {
+      font-size: 22px;
+      display: none;
+      height: 25px;
+      width: 25px;
+      border: none;
+      background: rgb(247, 247, 247);
+      border-radius: 5px;
+    }
+    &:hover {
+      background: rgb(210, 210, 210);
+      .btn-add-inline {
+        display: unset;
+      }
+    }
+
+    .btn-show-child {
+      height: 20px;
+      width: 20px;
+      border: none;
+      background: transparent;
+      background-image: url("./../../assets/images/expand.png");
+      background-size: 50%;
+      background-repeat: no-repeat;
+      background-position: center;
+      text-align: center;
+      vertical-align: middle;
+      transition: ease 250ms;
+      &.collapse {
+        transform: rotate(-90deg);
+      }
+    }
+
+    input {
+      flex-grow: 1;
+      font-size: 14px;
+      height: 25px;
+      background-color: transparent;
+      border: none;
+    }
+  }
+  .children {
+    padding-left: 15px;
+  }
+  * {
+    outline: none;
+  }
+}
